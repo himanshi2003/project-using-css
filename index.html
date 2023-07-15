@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        width: 100vw;
+        background-color: paleturquoise;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .card {
+        width: 400px;
+        height: 600px;
+        background-color: white;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+      }
+      .card img {
+        width: 100%;
+        height: 30%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+      .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 75%;
+        text-align: center;
+      }
+      #amount {
+        width: 80%;
+        height: 10%;
+        background-color: #8bc6e8;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .left {
+        /* width: fit-content; */
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        gap: 15px;
+      }
+      .imgbox img{
+        width: 3.5rem;
+        height: 3.5rem ;
+      }
+      #btn {
+        width: 80%;
+        height: 9%;
+        background-color: rgb(7, 7, 58);
+        border-radius: 10px;
+        color: white;
+        box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4),
+          0 25px 16px rgba(0, 0, 0, 0.2);
+      }
+      .box a {
+        text-decoration: none;
+        color: rgb(46, 43, 43);
+        font-weight: bold;
+        font-size: large;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <img src="icon.jpg" alt="" srcset="" />
+        <div class="text">
+          <h2>order summary</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est labore
+            obcaecati laborum distinctio dolorum eligendi voluptate tenetur rem
+            neque quaerat!
+          </p>
+        </div>
+
+        <div id="amount">
+          <div class="left">
+            <div class="imgbox">
+              <img src="music.png" alt="" />
+            </div>
+            <div class="textamount">
+              <p>Amount</p>
+              <p>$99.9/year</p>
+            </div>
+          </div>
+          <div class="right">
+            <a href="#">change</a>
+          </div>
+        </div>
+
+        <button id="btn">proceed to payment</button>
+        <div class="box">
+          <a href="#">cancel order</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
