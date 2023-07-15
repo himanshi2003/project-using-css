@@ -10,111 +10,139 @@
         padding: 0;
         box-sizing: border-box;
       }
-      body {
-        height: 100vh;
-        width: 100vw;
-        background-color: paleturquoise;
 
+      .container {
+        width: 100vw;
+        height: 100vh;
+        background-color: #cdd6da;
+        background-image: linear-gradient(160deg, #10678d 0%, #464963 100%);
         display: flex;
         justify-content: center;
         align-items: center;
       }
       .card {
-        width: 400px;
-        height: 600px;
-        background-color: white;
-        border-radius: 20px;
+        width: 1000px;
+        height: 500px;
+        position: relative;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
+        background-color: #4e094c;
+        overflow: hidden;
+        border-radius: 80px;
       }
-      .card img {
+      .card:hover::before {
+        left: 0%; /* Move the overlay to the right edge of the card */
+    }
+    .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
         width: 100%;
-        height: 30%;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Adjust the overlay color and opacity */
+        transition: left 5s ease; /* Add transition for smooth animation */
+    }
+      .right {
+        width: 50%;
+        height: 100%;
+        background-color: white;
+        background-image: url("icon.jpg");
+        background-size: contain; /* Adjust as needed */
+        background-position: center;
       }
-      .text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        width: 75%;
-        text-align: center;
-      }
-      #amount {
-        width: 80%;
-        height: 10%;
-        background-color: #8bc6e8;
-        border-radius: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-      .left {
-        /* width: fit-content; */
+      .left{
+        width: 50%;
         height: 100%;
         display: flex;
-        align-items: center;
-
-        gap: 15px;
-      }
-      .imgbox img{
-        width: 3.5rem;
-        height: 3.5rem ;
-      }
-      #btn {
-        width: 80%;
-        height: 9%;
-        background-color: rgb(7, 7, 58);
-        border-radius: 10px;
+        flex-direction: column;
+        gap: 25px;
         color: white;
-        box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4),
-          0 25px 16px rgba(0, 0, 0, 0.2);
       }
-      .box a {
-        text-decoration: none;
-        color: rgb(46, 43, 43);
+      .content{
+        width: 75%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 65px;
+    
+
+      }
+      .heading{
+        font-size: 2.4rem;
+        cursor: pointer;
+    }
+    .heading:hover{
+        border: 1px solid white;
+    }
+    .descBox p{
+        font-size: 1.1rem;
+        font-weight: normal;
+        cursor: pointer;
+    }
+    .descBox p:hover{
+        border: 1px solid white;
+    }
+    .stats{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+  
+    #number{
+        font-size: 1.7rem;
         font-weight: bold;
-        font-size: large;
-      }
+        cursor: pointer;
+        
+    }
+
+    #unit{
+        font-size:smaller;
+        cursor: pointer;
+    }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="card">
-        <img src="icon.jpg" alt="" srcset="" />
-        <div class="text">
-          <h2>order summary</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est labore
-            obcaecati laborum distinctio dolorum eligendi voluptate tenetur rem
-            neque quaerat!
-          </p>
-        </div>
-
-        <div id="amount">
-          <div class="left">
-            <div class="imgbox">
-              <img src="music.png" alt="" />
+        <div class="left">
+            <div class="content">
+                <h1 class="heading">
+                    Get insights that help your business grow
+                </h1>
+                <div class="descBox">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci ipsum odit eaque accusantium totam repellendus minus sit. Consequuntur, deleniti dignissimos?</p>
+                </div>
+                <!-- Add description here -->
+                <div class="stats">
+                    <div>
+                        <div id="number">
+                            10K+
+                        </div>
+                        <div id="unit">
+                            Comments
+                        </div>
+                    </div>
+                    <div>
+                        <div id="number">
+                            214
+                        </div>
+                        <div id="unit">
+                            Paid Users
+                        </div>
+                    </div>
+                    <div>
+                        <div id="number">
+                            12M+
+                        </div>
+                        <div id="unit">
+                            Views
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="textamount">
-              <p>Amount</p>
-              <p>$99.9/year</p>
-            </div>
-          </div>
-          <div class="right">
-            <a href="#">change</a>
-          </div>
         </div>
-
-        <button id="btn">proceed to payment</button>
-        <div class="box">
-          <a href="#">cancel order</a>
-        </div>
+        <div class="right"></div>
       </div>
     </div>
   </body>
